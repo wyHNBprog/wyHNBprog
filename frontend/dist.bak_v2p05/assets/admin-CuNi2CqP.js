@@ -1,0 +1,1 @@
+import{U as t}from"./index-Bh5xkq_W.js";function r(){return t.get("/api/admin/stats")}function s(){return t.get("/api/admin/users")}function i(e,a){return t.put("/api/admin/users/"+e+"/role",a)}export{s as a,r as g,i as u};

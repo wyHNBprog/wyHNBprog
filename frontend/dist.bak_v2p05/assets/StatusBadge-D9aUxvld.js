@@ -1,0 +1,1 @@
+import{S as o,T as n}from"./index-DWa5RDqS.js";import{F as c,c as u,R as p,g as l,l as t}from"./vue-vendor-dAvRggL_.js";const i={__name:"StatusBadge",props:{status:{type:String,required:!0}},setup(a){const s=a,e=t(()=>o[s.status]||s.status),r=t(()=>n[s.status]||"badge-orange");return(S,_)=>(c(),u("span",{class:l(["status-badge",r.value])},p(e.value),3))}};export{i as _};

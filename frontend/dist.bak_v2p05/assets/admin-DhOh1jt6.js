@@ -1,0 +1,1 @@
+import{U as e}from"./index-ALPYv07p.js";function a(){return e.get("/api/admin/stats")}function s(){return e.get("/api/admin/users")}function i(t,n){return e.put("/api/admin/users/"+t+"/role",n)}function m(){return e.get("/api/admin/wecom-members")}export{s as a,m as b,a as g,i as u};

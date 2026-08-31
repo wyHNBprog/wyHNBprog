@@ -1,0 +1,25 @@
+[Unit]
+Description=VoiceHub FastAPI Application (Gunicorn + Uvicorn)
+After=network.target mysql.service redis-server.service
+
+[Service]
+Type=notify
+User=root
+WorkingDirectory=/home/app/voicehub/voicehub-deploy/backend
+Environment="PATH=/root/miniconda3/envs/voicehub/bin:/usr/local/bin:/usr/bin"
+ExecStart=/root/miniconda3/envs/voicehub/bin/gunicorn app.main:app \
+    -k uvicorn.workers.UvicornWorker \
+    -w 1 \
+    -b 0.0.0.0:8000 \
+    --timeout 120 \
+    --keep-alive 5 \
+    --preload \
+    --max-requests 5000 \
+    --max-requests-jitter 500
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
